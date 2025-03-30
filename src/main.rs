@@ -43,4 +43,37 @@ fn main() {
 
     // Slices
     println!("********** Slices **********");
+
+    let slice: [i32; 5] = [3, 1, 6, 4, 5];
+    let slice_slice: &[i32] = &slice[1..4];
+    let slice_slice2: &[i32] = &slice[1..];
+    println!("Slice: {:?}", slice);
+    println!("Slice slice: {:?}", slice_slice);
+    println!("Slice slice2: {:?}", slice_slice2);
+
+    // Strings
+    println!("********** Strings **********");
+
+    let my_string = String::from("Hello, world!");
+    println!("String: {}", my_string);
+    println!("Length of string: {}", my_string.len());
+    println!(
+        "First character of string: {}",
+        my_string.chars().next().unwrap()
+    );
+    println!(
+        "Last character of string: {}",
+        my_string.chars().last().unwrap()
+    );
+
+    // Functions
+    println!("********** Functions **********");
+
+    let result = add(2, 3);
+    println!("Result: {}", result);
+}
+
+// Functions
+fn add(a: i32, b: i32) -> i32 {
+    a + b
 }
